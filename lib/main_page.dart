@@ -9,6 +9,21 @@ class MainPage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Main Page"),
         ),
-        body: Center(child: Text("Hello Rizky ")));
+        body: const Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Hello"),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hello"),
+                Text("Hello"),
+                Text("Hello"),
+              ],
+            ),
+            Text("Hello"),
+          ],
+        ));
   }
 }
