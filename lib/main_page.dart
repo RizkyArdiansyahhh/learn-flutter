@@ -7,19 +7,29 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("SizedBox Widget"),
+          title: Text("Text Widget"),
         ),
         body: Center(
-          child: Column(children: [
-            SizedBox(
-              width: 200,
-              child: Text("Halo Nama Saya Rizky Ardiansyah Dari Pekanbaru"),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text("Saya Berumur 20 Tahun"),
-          ]),
-        ));
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(
+            width: 200,
+            child: Text(
+                "Hello... Nama saya Rizky Ardiansyah Tinggal Di Pekanbaru, dan sekarang sedang berkualiah di universitas riau.",
+                textAlign: TextAlign.left,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  // backgroundColor: Colors.green[400],
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  decoration: TextDecoration.underline,
+                  decorationThickness: 2,
+                  decorationStyle: TextDecorationStyle.wavy,
+                  decorationColor: Colors.red,
+                )),
+          )
+        ])));
   }
 }
