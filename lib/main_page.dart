@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -19,12 +20,12 @@ class MainPage extends StatelessWidget {
                 textAlign: TextAlign.left,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   // backgroundColor: Colors.green[400],
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontStyle: FontStyle.italic,
-                  decoration: TextDecoration.underline,
+                  // fontStyle: FontStyle.italic,
+                  // decoration: TextDecoration.underline,
                   decorationThickness: 2,
                   decorationStyle: TextDecorationStyle.wavy,
                   decorationColor: Colors.red,
