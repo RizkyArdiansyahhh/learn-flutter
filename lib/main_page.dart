@@ -7,23 +7,37 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Main Page"),
+          title: Text("Container"),
         ),
-        body: const Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Hello"),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text("Hello"),
-                Text("Hello"),
-                Text("Hello"),
-              ],
-            ),
-            Text("Hello"),
-          ],
-        ));
+        body: Column(children: [
+          Row(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.yellow,
+              ),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.green,
+              )
+            ],
+          )
+        ]));
   }
 }
