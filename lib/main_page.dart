@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -28,6 +29,7 @@ class _MainPageState extends State<MainPage> {
             TextField(
               controller: textEditingController,
               onChanged: (value) => setState(() {}),
+              // enabled: true,
               style: TextStyle(
                 fontSize: 16,
               ),
@@ -62,6 +64,18 @@ class _MainPageState extends State<MainPage> {
                 errorText: textEditingController.text.length >= 50
                     ? "Max Username 50"
                     : null,
+
+                // Icon Input
+                icon: Icon(
+                  MdiIcons.faceWomanProfile,
+                  color: Colors.blueGrey,
+                ),
+                prefixIcon: Icon(
+                  MdiIcons.faceManProfile,
+                ),
+                suffixIcon: Icon(
+                  MdiIcons.passport,
+                ),
               ),
               keyboardType: TextInputType.number,
             ),
