@@ -63,6 +63,7 @@ class _MainPageState extends State<MainPage> {
                     ? "Max Username 50"
                     : null,
               ),
+              keyboardType: TextInputType.number,
             ),
             SizedBox(
               height: 40,
