@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -12,36 +13,21 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Padding Widget",
-            ),
-          ),
-          backgroundColor: Colors.grey,
+          title: Center(child: Text("Icon Widget")),
+          backgroundColor: Colors.amberAccent,
         ),
-        body: const Row(
-          children: [
-            Padding(
-              child: Text("Halo1"),
-              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            ),
-            Padding(
-              child: Text("Halo1"),
-              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            ),
-            Padding(
-              child: Text("Halo1"),
-              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            ),
-            Padding(
-              child: Text("Halo1"),
-              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            ),
-            Padding(
-              child: Text("Halo1"),
-              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-            ),
+        body: Center(
+            child: Icon(
+          MdiIcons.languageJavascript, // Menggunakan MdiIcons setelah import
+          size: 150,
+          color: Colors.amberAccent,
+          shadows: [
+            Shadow(
+              offset: Offset(1, 0),
+              blurRadius: 5,
+              color: Colors.black,
+            )
           ],
-        ));
+        )));
   }
 }
