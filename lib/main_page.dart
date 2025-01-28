@@ -12,44 +12,20 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Wrap Widget",
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
+          title: Text(
+            "Align Wodget",
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.lightGreenAccent,
         ),
-        body: Container(
-          color: Colors.yellow,
-          width: double.infinity,
-          height: double.infinity,
-          child: Wrap(
-            direction: Axis.vertical,
-            alignment: WrapAlignment.center,
-            crossAxisAlignment: WrapCrossAlignment.start,
-            runAlignment: WrapAlignment.center,
-            spacing: 10,
-            runSpacing: 20,
-            verticalDirection: VerticalDirection.up,
-            children: List.generate(
-                8,
-                (index) => Container(
-                      width: 150,
-                      height: index % 2 == 0 ? 100 : 150,
-                      color: index % 2 == 0 ? Colors.red : Colors.cyanAccent,
-                      child: Center(
-                        child: Text(index.toString(),
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                              fontSize: 20,
-                            )),
-                      ),
-                    )),
-          ),
+        body: Align(
+          alignment: Alignment(-0.75, -1),
+          child: SizedBox(
+              width: 300,
+              child: Text(
+                "Halo perkenalkan nama saya rizky ardiansyah, saya mempunyai hobi yaitu melukis. -RizkyQuote",
+                textAlign: TextAlign.justify,
+              )),
         ));
   }
 }
