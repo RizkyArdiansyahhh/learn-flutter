@@ -12,20 +12,36 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            "Align Wodget",
-            style: TextStyle(fontWeight: FontWeight.bold),
+          title: Center(
+            child: Text(
+              "Padding Widget",
+            ),
           ),
-          backgroundColor: Colors.lightGreenAccent,
+          backgroundColor: Colors.grey,
         ),
-        body: Align(
-          alignment: Alignment(-0.75, -1),
-          child: SizedBox(
-              width: 300,
-              child: Text(
-                "Halo perkenalkan nama saya rizky ardiansyah, saya mempunyai hobi yaitu melukis. -RizkyQuote",
-                textAlign: TextAlign.justify,
-              )),
+        body: const Row(
+          children: [
+            Padding(
+              child: Text("Halo1"),
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            ),
+            Padding(
+              child: Text("Halo1"),
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            ),
+            Padding(
+              child: Text("Halo1"),
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            ),
+            Padding(
+              child: Text("Halo1"),
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            ),
+            Padding(
+              child: Text("Halo1"),
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            ),
+          ],
         ));
   }
 }
