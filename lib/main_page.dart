@@ -13,27 +13,43 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
         appBar: AppBar(
           title: Center(
-            child: const Text(
-              "Stack Widget",
+            child: Text(
+              "Wrap Widget",
+              style: TextStyle(
+                color: Colors.white,
+              ),
             ),
           ),
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Colors.green,
         ),
-        body: Center(
-            child: Stack(
-          children: [
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.greenAccent,
-              alignment: Alignment.center,
-            ),
-            Positioned(
-              child: Text("Hello wordl"),
-              top: 50,
-              left: 50,
-            )
-          ],
-        )));
+        body: Container(
+          color: Colors.yellow,
+          width: double.infinity,
+          height: double.infinity,
+          child: Wrap(
+            direction: Axis.vertical,
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.start,
+            runAlignment: WrapAlignment.center,
+            spacing: 10,
+            runSpacing: 20,
+            verticalDirection: VerticalDirection.up,
+            children: List.generate(
+                8,
+                (index) => Container(
+                      width: 150,
+                      height: index % 2 == 0 ? 100 : 150,
+                      color: index % 2 == 0 ? Colors.red : Colors.cyanAccent,
+                      child: Center(
+                        child: Text(index.toString(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 20,
+                            )),
+                      ),
+                    )),
+          ),
+        ));
   }
 }
