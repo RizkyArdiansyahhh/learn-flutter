@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter/services.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -9,25 +9,43 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  TextEditingController textEditingController =
+      TextEditingController(text: "initial value");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Icon Widget")),
-          backgroundColor: Colors.amberAccent,
+          title: Center(child: Text("TextField Widget")),
+          backgroundColor: Colors.greenAccent,
         ),
-        body: Center(
-            child: Icon(
-          MdiIcons.languageJavascript, // Menggunakan MdiIcons setelah import
-          size: 150,
-          color: Colors.amberAccent,
-          shadows: [
-            Shadow(
-              offset: Offset(1, 0),
-              blurRadius: 5,
-              color: Colors.black,
-            )
-          ],
-        )));
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              TextField(
+                controller: textEditingController,
+                // obscureText: true,
+                // obscuringCharacter: "!",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+                cursorColor: Colors.red,
+                // inputFormatters: [
+                //   // Menggunakan TextInputFormatter untuk memaksa input menjadi kapital
+                //   FilteringTextInputFormatter.allow(RegExp('[A-Za-z]')),
+                //   TextInputFormatter.withFunction((oldValue, newValue) =>
+                //       TextEditingValue(text: newValue.text.toUpperCase())),
+                // ],
+                onChanged: (value) => setState(() {}),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(textEditingController.text,
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16)),
+            ],
+          ),
+        ));
   }
 }
