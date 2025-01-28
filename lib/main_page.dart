@@ -1,5 +1,6 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -9,121 +10,36 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  bool isEnabled = true;
-  TextEditingController textEditingController = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text("TextField Widget"),
+        appBar: AppBar(
+          title: Text("SingleChildScrollView vs ListView Widget"),
         ),
-        backgroundColor: Colors.grey.shade400,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 25,
-            ),
-            TextField(
-              controller: textEditingController,
-              onChanged: (value) => setState(() {}),
-              // enabled: true,
-              style: TextStyle(
-                fontSize: 16,
-              ),
-              // autofocus: true,
-              decoration: InputDecoration(
-                  // border: OutlineInputBorder(),
-                  // PlaceHolder input
-                  hintText: "Enter Your Name",
-                  hintStyle: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey.shade500,
-                  ),
-
-                  // Label Input
-                  labelText: "Username",
-                  labelStyle: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-
-                  // Counter Input
-                  counterText: textEditingController.text.length >= 50
-                      ? "50"
-                      : "${50 - textEditingController.text.length}",
-                  counterStyle: TextStyle(
-                    color: textEditingController.text.length >= 40
-                        ? Colors.red
-                        : Colors.black,
-                  ),
-
-                  // Error Input
-                  errorText: textEditingController.text.length >= 50
-                      ? "Max Username 50"
-                      : null,
-
-                  // Icon Input
-                  icon: Icon(
-                    MdiIcons.faceWomanProfile,
-                    color: Colors.blueGrey,
-                  ),
-                  prefixIcon: Icon(
-                    MdiIcons.faceManProfile,
-                  ),
-                  suffixIcon: Icon(
-                    MdiIcons.passport,
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.grey.shade500,
-                    ),
-                  ),
-                  disabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
-                  ),
-                  enabled: isEnabled,
-                  focusedBorder: OutlineInputBorder(
-                    gapPadding: 10,
-                    borderSide: BorderSide(
-                      color: Colors.lightBlueAccent,
-                    ),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                  ),
-                  focusedErrorBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.red,
-                    ),
-                  )),
-              keyboardType: TextInputType.number,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Text(textEditingController.text),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  isEnabled = !isEnabled;
-                });
-              },
-              child: Text(isEnabled ? "Disabled" : "Enabled"),
-            )
-          ],
-        ),
-      ),
-    );
+        body: SizedBox(
+          width: 250,
+          child: ListView(
+            // scrollDirection: Axis.horizontal,
+            children: createContainers(),
+          ),
+        ));
   }
+}
+
+List<Widget> createContainers() {
+  return List.generate(30, (index) {
+    return Builder(builder: (context) {
+      log("container $index");
+      return Container(
+        margin: EdgeInsets.all(10),
+        height: 150,
+        width: 150,
+        color: Colors.amberAccent,
+        child: Center(
+          child: Text(index.toString(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50)),
+        ),
+      );
+    });
+  });
 }
