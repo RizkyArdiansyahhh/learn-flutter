@@ -20,7 +20,7 @@ class _MainPageState extends State<MainPage> {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              showDialog(
+              showDialog<bool>(
                 context: context,
                 builder: (context) => SimpleDialog(
                   title: Text("Simple Dialog"),
