@@ -3,14 +3,14 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/second_page.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class NavigatorPage extends StatefulWidget {
+  const NavigatorPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<NavigatorPage> createState() => _NavigatorPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _NavigatorPageState extends State<NavigatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
