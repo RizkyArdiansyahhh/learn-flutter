@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/Country.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -9,37 +8,27 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<Country> countryList = [
-    Country(name: "Indonesia"),
-    Country(name: "Malaysia"),
-    Country(name: "Singapore"),
-    Country(name: "Thailand"),
-    Country(name: "Kamboja"),
-  ];
-
-  Country? selectedCountry;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DropDown Widget"),
+        title: Center(child: Text("About Dialog")),
         backgroundColor: Colors.amberAccent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(30),
-        child: Center(
-            child: DropdownButton<Country>(
-          items: countryList
-              .map((country) => DropdownMenuItem<Country>(
-                    value: country,
-                    child: Text(country.name),
-                  ))
-              .toList(),
-          value: selectedCountry,
-          onChanged: (value) => setState(() => selectedCountry = value),
-          isExpanded: true,
-          hint: Text("Select Country"),
-        )),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) => AboutDialog(
+                      applicationName: "Flutter Application 2",
+                      applicationVersion: "1.0.0",
+                      applicationLegalese: "Flutter Application 2",
+                      applicationIcon: Icon(Icons.info),
+                    ));
+          },
+          child: Text("About"),
+        ),
       ),
     );
   }
